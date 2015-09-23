@@ -12,6 +12,18 @@ class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
     
+    @IBOutlet var returnButton: UIButton!
+    
+    @IBOutlet var deleteButton: UIButton!
+    
+    @IBOutlet var IosButton: UIButton!
+    
+    @IBOutlet var DeCalButton: UIButton!
+    
+    @IBOutlet var IsButton: UIButton!
+    
+    @IBOutlet var CoolButton: UIButton!
+    
     var keyboardView: UIView!
 
     override func updateViewConstraints() {
@@ -37,6 +49,36 @@ class KeyboardViewController: UIInputViewController {
     override func textDidChange(textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
     }
+    
+    func returnPressed() {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.insertText("\n")
+    }
+    
+    func deletePressed() {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.deleteBackward()
+    }
+    
+    func ios() {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.insertText("IOS ")
+    }
+    
+    func decal() {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.insertText("DeCal ")
+    }
+
+    func Is() {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.insertText("is ")
+    }
+
+    func cool() {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.insertText("Cool")
+    }
 
     func loadInterface() {
         let keyboardNib = UINib(nibName: "Keyboard", bundle: nil)
@@ -44,8 +86,14 @@ class KeyboardViewController: UIInputViewController {
         keyboardView.frame = view.frame
         view.addSubview(keyboardView)
         view.backgroundColor = keyboardView.backgroundColor
-        nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside) // advanceToNextInputMode is already defined in template
+        nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
+        returnButton.addTarget(self, action: "returnPressed", forControlEvents: .TouchUpInside)
+        deleteButton.addTarget(self, action: "deletePressed", forControlEvents: .TouchUpInside)
+        IosButton.addTarget(self, action: "ios", forControlEvents: .TouchUpInside)
+        DeCalButton.addTarget(self, action: "decal", forControlEvents: .TouchUpInside)
+        IsButton.addTarget(self, action: "Is", forControlEvents: .TouchUpInside)
+        CoolButton.addTarget(self, action: "cool", forControlEvents: .TouchUpInside)
+
     }
-
-
+    
 }
