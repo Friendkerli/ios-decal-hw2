@@ -24,6 +24,8 @@ class KeyboardViewController: UIInputViewController {
     
     @IBOutlet var CoolButton: UIButton!
     
+    @IBOutlet var smileEmojiButton: UIButton!
+    
     var keyboardView: UIView!
 
     override func updateViewConstraints() {
@@ -79,6 +81,11 @@ class KeyboardViewController: UIInputViewController {
         let proxy = textDocumentProxy as UITextDocumentProxy
         proxy.insertText("Cool")
     }
+    
+    func smileEmoji() {
+        let proxy = textDocumentProxy as UITextDocumentProxy
+        proxy.insertText("\u{1F601}")
+    }
 
     func loadInterface() {
         let keyboardNib = UINib(nibName: "Keyboard", bundle: nil)
@@ -93,6 +100,7 @@ class KeyboardViewController: UIInputViewController {
         DeCalButton.addTarget(self, action: "decal", forControlEvents: .TouchUpInside)
         IsButton.addTarget(self, action: "Is", forControlEvents: .TouchUpInside)
         CoolButton.addTarget(self, action: "cool", forControlEvents: .TouchUpInside)
+        smileEmojiButton.addTarget(self, action: "smileEmoji", forControlEvents: .TouchUpInside)
 
     }
     

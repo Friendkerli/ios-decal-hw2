@@ -13,6 +13,7 @@
                 <outlet property="deleteButton" destination="R45-T5-T8u" id="lBs-UR-ArJ"/>
                 <outlet property="nextKeyboardButton" destination="gRt-12-JcF" id="CWQ-gG-G2m"/>
                 <outlet property="returnButton" destination="5ep-Bc-mtZ" id="JXv-NL-ltl"/>
+                <outlet property="smileEmojiButton" destination="rqB-cV-2US" id="oo0-Mf-wK4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -51,6 +52,10 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42S-hf-hxq">
                     <rect key="frame" x="187" y="68" width="30" height="30"/>
                     <state key="normal" title="is"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqB-cV-2US">
+                    <rect key="frame" x="246" y="68" width="30" height="30"/>
+                    <state key="normal" title="😁"/>
                 </button>
             </subviews>
             <constraints>
